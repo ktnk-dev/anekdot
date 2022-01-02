@@ -5,6 +5,6 @@ web = requests.get(url, headers=h).text    # Получение кода веб-
 
 bs      = bs4.BeautifulSoup(web, "lxml")                             
 text    = str(bs.find_all(class_="topicbox")[1].find(class_="text"))  # получаем элемент, в котором написан текст анекдота
-anekdot = text[18:-6].replace("<br/>","\n")                           # удаляем лишние теги, которые попали в наш текст. заменяем тег переноса на \n
+anekdot = text[26:-6].replace("<br/>","\n")                           # удаляем лишние теги, которые попали в наш текст. заменяем тег переноса на \n
 
 print(f"\n{anekdot}\n")
